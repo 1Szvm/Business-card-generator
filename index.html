@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" h2    tent="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="card.js" defer></script>
+    <title>Card</title>
+    <style>
+    .container{
+        display: flex;
+        justify-content: center;
+        margin: 10px;
+    }
+    .inputsection{
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+        height: 400px;
+    }
+    .bcard{
+        border: 1px solid black;
+        height: 400px;
+        width: 300px;
+    }
+    .color{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .inputsection>input,div{
+        margin: 5px;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="inputsection">
+            <h2>Business card generator</h2>
+            <input type="text" placeholder="Name goes here" id="nameinput" onkeyup="displayname()">
+            <input type="text" placeholder="Addres goes here">
+            <input type="text" placeholder="Text goes here">
+            <input type="text" placeholder="Logo/Symbol goes here">
+            <div class="color">
+                <label class="mx-2">Base color: </label>
+                <input type="color">
+            </div>
+            <div class="color">
+                <label class="mx-2">Text color: </label>
+                <input type="color">
+            </div>
+            <div class="color mx-2">
+                <label class="mx-2">Border color: </label>
+                <input type="color">
+            </div>
+            <input type="button" value="orientation🔃" onclick="orient()">
+            <div class="color">
+                <label class="mx-2">Font size:</label>
+                <input type="range">
+            </div>
+            <div class="color">
+                <label class="mx-2">Border size:</label>
+                <input type="range">
+            </div>
+        </div>
+
+        <div class="bcard text-center p-2">
+            <h1 id="name">Name</h1>
+            <h2 id="addres">Addres</h2>
+            <p id="text">Text</p>
+            <img src="" alt="Log/picture" id="img">
+        </div>
+    </div>
+</body>
+</html>
