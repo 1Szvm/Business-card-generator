@@ -5,7 +5,7 @@
     <meta name="viewport" h2    tent="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="card.js" defer></script>
-    <title>Card</title>
+    <title>Card generator</title>
     <style>
     .container{
         display: flex;
@@ -31,16 +31,28 @@
     .inputsection>input,div{
         margin: 5px;
     }
+    .sideway{
+        height: 300px;
+        width: 400px;
+    }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="inputsection">
             <h2>Business card generator</h2>
-            <input type="text" placeholder="Name goes here" id="nameinput" onkeyup="displayname()">
-            <input type="text" placeholder="Addres goes here">
-            <input type="text" placeholder="Text goes here">
+            <input type="text" placeholder="Name" id="name" onkeyup="display(this)">
+            <input type="text" placeholder="Job" id="job" onkeyup="display(this)">
+            <input type="text" placeholder="Email" id="email" onkeyup="display(this)">
+            <input type="text" placeholder="Phone Number" id="number" onkeyup="display(this)">
+            <input type="text" placeholder="Addres" id="addres" onkeyup="display(this)">
+            <input type="text" placeholder="Web" id="web" onkeyup="display(this)">
             <input type="text" placeholder="Logo/Symbol goes here">
+            <div class="d-flex justify-content-between">
+                <input class="w-25" type="button" onclick="textalign(this)" id="left" value="Left">
+                <input class="w-25" type="button" onclick="textalign(this)" id="center" value="Center">
+                <input class="w-25" type="button" onclick="textalign(this)" id="right" value="Right">
+            </div>
             <div class="color">
                 <label class="mx-2">Base color: </label>
                 <input type="color">
@@ -56,7 +68,7 @@
             <input type="button" value="orientation🔃" onclick="orient()">
             <div class="color">
                 <label class="mx-2">Font size:</label>
-                <input type="range">
+                <input type="range" id="fSize" min="10" max="30" onchange="fsize()">
             </div>
             <div class="color">
                 <label class="mx-2">Border size:</label>
@@ -64,11 +76,15 @@
             </div>
         </div>
 
-        <div class="bcard text-center p-2">
-            <h1 id="name">Name</h1>
-            <h2 id="addres">Addres</h2>
-            <p id="text">Text</p>
-            <img src="" alt="Log/picture" id="img">
+        <div class="bcard text-center p-2 ">
+            <h1 id="nameoutput">Name</h1>
+            <h2 id="joboutput">Job</h2>
+            <div class="m-4">
+                <p class="m-2" id="emailoutput">Email</p>
+                <p class="m-2" id="numberoutput">Phone number</p>
+                <p class="m-2" id="addresoutput">Addres</p>
+                <p class="m-2" id="weboutput">Website</p>
+            </div>
         </div>
     </div>
 </body>
